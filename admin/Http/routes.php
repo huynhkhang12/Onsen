@@ -19,3 +19,18 @@ $router->post('/news/export.json', ['as' => 'admin.news.export', function (\Illu
 	return $response;
 
 }]);
+
+$router->any('ajax/model/{adminModel}/{adminModelId}/edit', ['as' => 'admin.ajax.model.edit',
+    function (\SleepingOwl\Admin\Contracts\ModelConfigurationInterface $adminModel, $adminModelId) {
+
+        $model = $adminModel->getClass();
+
+        $section = \AdminSection::getModel($model);
+
+        $section = $section
+            ->fireEdit($adminModelId)
+            ->render()
+        ;
+        return $section;
+    }
+]);
