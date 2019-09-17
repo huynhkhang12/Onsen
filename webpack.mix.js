@@ -11,5 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.options({
+    hmrOptions: {
+        host: 'demo.my',
+        port: 8080
+    }
+});
+
+mix.js('resources/js/modal-editing.js', 'public/js');
+
+// mix.js('resources/js/app.js', 'public/js')
+//    .sass('resources/sass/app.scss', 'public/css');

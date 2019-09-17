@@ -57,6 +57,8 @@ class AdminSectionsServiceProvider extends ServiceProvider {
         'App\Model\DataTables\NewsActions'            => 'Admin\Http\Sections\DataTables\Actions',
         'App\Model\DataTables\CountryStopPageRefresh' => 'Admin\Http\Sections\DataTables\StopPageRefresh',
 
+        'App\Model\ModalEditingPost' => 'Admin\Http\Sections\ModalEditingPosts',
+
         'App\SomeModel' => 'Admin\Http\Sections\SomeModelSection',
     ];
 
